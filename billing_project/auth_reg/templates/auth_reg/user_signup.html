@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper p-5">
+        <div class="signup-form">
+            <div class="status-box">
+                
+            </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="usernameInput" class="form-label">Имя пользоваетеля</label>
+                    <input
+                        type="text"
+                        name="username"
+                        id="usernameInput"
+                        class="form-control"
+                        placeholder="Введите username"
+                        aria-describedby="helpId"
+                        required
+                    />
+                    <small id="helpId" class="text-muted">Имя пользоветеля</small>
+                </div>
+                <div class="mb-3">
+                    <label for="emailInput" class="form-label">Электронная  почта (опционально)</label>
+                    <input
+                        type="text"
+                        name="email"
+                        id="emailInput"
+                        class="form-control"
+                        placeholder="Введите email"
+                        aria-describedby="helpId"
+                    />
+                    <small id="helpId" class="text-muted">Email</small>
+                </div>
+                <div class="mb-3">
+                    <label for="passwordInput1" class="form-label">Пароль</label>
+                    <input
+                        type="password"
+                        name="password1"
+                        id="passwordInput1"
+                        class="form-control"
+                        placeholder="Введите пароль"
+                        aria-describedby="helpId"
+                        required
+                    />
+                    <small id="helpId" class="text-muted">Пароль</small>
+                </div>
+                <div class="mb-3">
+                    <label for="passwordInput" class="form-label">Пароль еще раз</label>
+                    <input
+                        type="password"
+                        name="password2"
+                        id="passwordInput2"
+                        class="form-control"
+                        placeholder="Введите пароль еще раз"
+                        aria-describedby="helpId"
+                        required
+                    />
+                    <small id="helpId" class="text-muted">Пароль</small>
+                </div>
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="submitBtn"
+                >
+                    Войти
+                </button>
+            </form> 
+            
+        </div>
+    </div>
+    <div class="toast-container position-fixed end-0 bottom-0">
+
+    </div>
+    <script type="module" src="{% static 'auth_reg/js/signup.js' %}"></script>
+</body>
+</html>
