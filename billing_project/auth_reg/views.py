@@ -10,6 +10,7 @@ class AjaxLoginView(LoginView):
     def form_valid(self, form):
         if self.is_ajax():
             print(1)
+            print(self.request.user)
             return JsonResponse({'logged_in': True})
         return super().form_valid(form)
     def form_invalid(self, form):

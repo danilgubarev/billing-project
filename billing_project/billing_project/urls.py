@@ -19,5 +19,9 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('auth/', include('auth_reg.urls', namespace='auth'))
+    path('auth/', include('auth_reg.urls', namespace='auth')),
+    path('tenant/', include('add_tenant.urls', namespace='tenant')),
 ]
+
+
+# sadfcdscfds123123213
